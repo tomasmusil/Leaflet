@@ -204,6 +204,15 @@ describe('Map', () => {
 			expect(zoom).to.equal(13);
 		});
 
+		it('passes duration option to tryAnimatedZoom', () => {
+			const map = new LeafletMap(document.createElement('div'), {zoom: 13, center: [51.605, -0.11]});
+			map._tryAnimatedZoom = sinon.spy();
+			map.setView([51.605, -0.11], 14, {animate: true, duration: 13});
+			map.remove(); // clean up
+			expect(map._tryAnimatedZoom.callCount).to.eql(1);
+			expect(map._tryAnimatedZoom.args[0][2].duration).to.eql(13);
+		});
+
 		it('passes duration option to panBy', () => {
 			const map = new LeafletMap(document.createElement('div'), {zoom: 13, center: [0, 0]});
 			map.panBy = sinon.spy();

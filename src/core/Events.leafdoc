@@ -139,3 +139,4 @@ The distance in pixels the draggable element was moved by.
 @property center: LatLng; The current center of the map
 @property zoom: Number; The current zoom level of the map
 @property noUpdate: Boolean; Whether layers should update their contents due to this event
+@property duration: Number; The zoom duration in seconds

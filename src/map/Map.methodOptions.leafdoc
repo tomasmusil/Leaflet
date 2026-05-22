@@ -51,6 +51,10 @@ zoom origin is. Setting `false` will make it always reset the view completely
 without animation.
 
 
+@option duration: Number = 0.25
+Duration of animated zooming, in seconds.
+
+
 
 
 @miniclass Pan options (Map)
